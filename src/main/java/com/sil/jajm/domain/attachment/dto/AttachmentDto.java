@@ -61,7 +61,7 @@ public class AttachmentDto {
         private String orgFileName; // 원본파일명
         private String sysFileName; // 시스템파일명
         private String parentType;  // 파일대상 게시판
-        private Board board;    // 파일대상 게시판 아이디
+        private String boardId;    // 파일대상 게시판 아이디
 
         private String createdBy;
         private LocalDateTime createdAt;
@@ -75,7 +75,7 @@ public class AttachmentDto {
                     .orgFileName(attachment.getOrgFileName())
                     .sysFileName(attachment.getSysFileName())
                     .parentType(attachment.getParentType())
-                    .board(attachment.getBoard())
+                    .boardId(attachment.getBoard().getId())
                     .createdBy(attachment.getCreatedBy())
                     .createdAt(attachment.getCreatedAt())
                     .modifiedBy(attachment.getModifiedBy())

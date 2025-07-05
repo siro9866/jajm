@@ -47,9 +47,9 @@ public class Board extends Base {
     @Column(name="ENABLED")
     private boolean enabled = true; // 활성화여부
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
     private List<Reply> replys = new ArrayList<>();
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
     private List<Attachment> attachments = new ArrayList<>();
 }

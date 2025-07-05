@@ -119,7 +119,7 @@ public class BoardDto {
         @DateTimeFormat(pattern = "yyyy-MM-dd")
         private LocalDate fromDate;
 
-        @Schema(description = "등록일 종료 (yyyyMMdd)", example = "20301231")
+        @Schema(description = "등록일 종료 (yyyyMMdd)", example = "2030-12-31")
         @DateTimeFormat(pattern = "yyyy-MM-dd")
         private LocalDate toDate;
 

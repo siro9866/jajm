@@ -21,8 +21,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -62,8 +62,9 @@ public class BoardService {
         BoardDto.Response response = BoardDto.Response.toDto(board);
 
         // 파일정보추가
-        List<AttachmentDto.Response> attachments = new ArrayList<>();
-        board.getAttachments().forEach(attachment -> attachments.add(AttachmentDto.Response.toDto(attachment)));
+        List<AttachmentDto.Response> attachments = board.getAttachments().stream()
+                .map(AttachmentDto.Response::toDto)
+                .collect(Collectors.toList());
 
         response.setAttachments(attachments);
         response.setAttachmentCount((long) attachments.size());
