@@ -15,7 +15,6 @@
 ## 버전정보
 * spring-boot: 3.5.3
 * java 21
-* mongodb
 * swagger 2.8.9
 
     
